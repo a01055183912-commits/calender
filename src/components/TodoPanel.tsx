@@ -40,7 +40,7 @@ export default function TodoPanel({ todos, todayEvents, onToggleTodo, onDeleteTo
           <h3 className="text-sm font-extrabold text-tico-dark">할 일 목록</h3>
           <button
             onClick={onAddTodo}
-            className="rounded-full bg-personal-DEFAULT px-3 py-1.5 text-xs font-bold text-white shadow-soft"
+            className="rounded-full bg-personal px-3 py-1.5 text-xs font-bold text-white shadow-soft"
           >
             + 할 일 추가
           </button>
@@ -59,7 +59,7 @@ export default function TodoPanel({ todos, todayEvents, onToggleTodo, onDeleteTo
                 type="checkbox"
                 checked={t.done}
                 onChange={() => onToggleTodo(t.id)}
-                className="h-5 w-5 shrink-0 accent-personal-DEFAULT"
+                className="h-5 w-5 shrink-0 accent-personal"
               />
               <div className="min-w-0 flex-1">
                 <p className={`truncate text-sm ${t.done ? 'text-tico-brown/40 line-through' : 'text-tico-dark'}`}>

@@ -8,9 +8,9 @@ const STYLE: Record<Category, string> = {
 }
 
 export const CATEGORY_DOT: Record<Category, string> = {
-  anniv: 'bg-anniv-DEFAULT',
-  work: 'bg-work-DEFAULT',
-  personal: 'bg-personal-DEFAULT',
+  anniv: 'bg-anniv',
+  work: 'bg-work',
+  personal: 'bg-personal',
 }
 
 export default function CategoryTag({ category }: { category: Category }) {

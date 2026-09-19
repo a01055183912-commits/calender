@@ -4,21 +4,26 @@ export default {
   theme: {
     extend: {
       colors: {
-        cream: '#FFF7F2',
+        cream: '#FFF9F5',
         anniv: {
-          light: '#FFE3E9',
-          DEFAULT: '#FF8FA3',
-          dark: '#E5657E',
+          light: '#FFD6E0',
+          DEFAULT: '#FF4D73',
+          dark: '#E0114F',
         },
         work: {
-          light: '#DCEBFF',
-          DEFAULT: '#6EA8FE',
-          dark: '#3D7BE0',
+          light: '#CFE3FF',
+          DEFAULT: '#2E7BFA',
+          dark: '#1552C4',
         },
         personal: {
-          light: '#DFF6E3',
-          DEFAULT: '#6FCF97',
-          dark: '#3FAE6B',
+          light: '#CFF5DA',
+          DEFAULT: '#17B85C',
+          dark: '#0E8C45',
+        },
+        holiday: {
+          light: '#FFDCDC',
+          DEFAULT: '#FF3B3B',
+          dark: '#D91E1E',
         },
         tico: {
           cream: '#FFF9F0',

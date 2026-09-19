@@ -55,7 +55,7 @@ export default function VoiceButton({ onResult, label = '음성으로 일정 등
         type="button"
         onClick={listening ? stop : start}
         className={`flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-bold shadow-soft transition ${
-          listening ? 'bg-anniv-DEFAULT text-white animate-pulse' : 'bg-work-light text-work-dark'
+          listening ? 'bg-anniv text-white animate-pulse' : 'bg-work-light text-work-dark'
         }`}
       >
         <span>{listening ? '🎙️' : '🎤'}</span>

@@ -1,10 +1,10 @@
 const PALETTE = [
-  { bg: '#FFE3E9', text: '#E5657E' }, // 코랄핑크
-  { bg: '#DCEBFF', text: '#3D7BE0' }, // 블루
-  { bg: '#DFF6E3', text: '#3FAE6B' }, // 민트그린
-  { bg: '#FFF2CC', text: '#B8860B' }, // 옐로우
-  { bg: '#E9E1FF', text: '#7B61C4' }, // 라벤더
-  { bg: '#FFE0CC', text: '#D97B3F' }, // 피치오렌지
+  { bg: '#FFD6E0', text: '#E0114F' }, // 코랄핑크
+  { bg: '#CFE3FF', text: '#1552C4' }, // 블루
+  { bg: '#CFF5DA', text: '#0E8C45' }, // 그린
+  { bg: '#FFEDB3', text: '#B8790B' }, // 옐로우
+  { bg: '#E7DBFF', text: '#6A3FD1' }, // 퍼플
+  { bg: '#FFDCC2', text: '#D9611A' }, // 오렌지
 ]
 
 function hashString(str: string): number {

@@ -101,7 +101,7 @@ export default function EventModal({
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="예: OO기관 강의"
-              className="w-full rounded-xl border border-cream bg-cream/60 px-3 py-2.5 text-base outline-none focus:border-work-DEFAULT"
+              className="w-full rounded-xl border border-cream bg-cream/60 px-3 py-2.5 text-base outline-none focus:border-work"
             />
           </div>
 
@@ -112,7 +112,7 @@ export default function EventModal({
                 type="date"
                 value={dateValue}
                 onChange={(e) => setDateValue(e.target.value)}
-                className="w-full rounded-xl border border-cream bg-cream/60 px-3 py-2.5 text-base outline-none focus:border-work-DEFAULT"
+                className="w-full rounded-xl border border-cream bg-cream/60 px-3 py-2.5 text-base outline-none focus:border-work"
               />
             </div>
             <div className="flex-1">
@@ -121,7 +121,7 @@ export default function EventModal({
                 type="time"
                 value={time}
                 onChange={(e) => setTime(e.target.value)}
-                className="w-full rounded-xl border border-cream bg-cream/60 px-3 py-2.5 text-base outline-none focus:border-work-DEFAULT"
+                className="w-full rounded-xl border border-cream bg-cream/60 px-3 py-2.5 text-base outline-none focus:border-work"
               />
             </div>
           </div>
@@ -137,10 +137,10 @@ export default function EventModal({
                   className={`flex-1 rounded-xl py-2 text-sm font-bold transition ${
                     category === c
                       ? c === 'anniv'
-                        ? 'bg-anniv-DEFAULT text-white'
+                        ? 'bg-anniv text-white'
                         : c === 'work'
-                        ? 'bg-work-DEFAULT text-white'
-                        : 'bg-personal-DEFAULT text-white'
+                        ? 'bg-work text-white'
+                        : 'bg-personal text-white'
                       : 'bg-cream text-tico-brown'
                   }`}
                 >
@@ -155,7 +155,7 @@ export default function EventModal({
               type="checkbox"
               checked={isLecture}
               onChange={(e) => setIsLecture(e.target.checked)}
-              className="h-5 w-5 accent-work-DEFAULT"
+              className="h-5 w-5 accent-work"
             />
             <span className="text-sm font-bold text-work-dark">🎤 강의 일정으로 등록 (담당기관·단가 입력)</span>
           </label>
@@ -168,7 +168,7 @@ export default function EventModal({
                   value={lecture.orgName}
                   onChange={(e) => setLecture((p) => ({ ...p, orgName: e.target.value }))}
                   placeholder="예: OO초등학교"
-                  className="w-full rounded-xl border border-cream bg-white px-3 py-2.5 text-base outline-none focus:border-work-DEFAULT"
+                  className="w-full rounded-xl border border-cream bg-white px-3 py-2.5 text-base outline-none focus:border-work"
                 />
               </div>
               <div>
@@ -178,7 +178,7 @@ export default function EventModal({
                   value={lecture.contactPhone}
                   onChange={(e) => setLecture((p) => ({ ...p, contactPhone: e.target.value }))}
                   placeholder="010-1234-5678"
-                  className="w-full rounded-xl border border-cream bg-white px-3 py-2.5 text-base outline-none focus:border-work-DEFAULT"
+                  className="w-full rounded-xl border border-cream bg-white px-3 py-2.5 text-base outline-none focus:border-work"
                 />
               </div>
               <div>
@@ -191,7 +191,7 @@ export default function EventModal({
                     setLecture((p) => ({ ...p, fee: e.target.value === '' ? '' : Number(e.target.value) }))
                   }
                   placeholder="예: 300000"
-                  className="w-full rounded-xl border border-cream bg-white px-3 py-2.5 text-base outline-none focus:border-work-DEFAULT"
+                  className="w-full rounded-xl border border-cream bg-white px-3 py-2.5 text-base outline-none focus:border-work"
                 />
               </div>
               <div>
@@ -230,12 +230,12 @@ export default function EventModal({
                       value={newTypeInput}
                       onChange={(e) => setNewTypeInput(e.target.value)}
                       placeholder="새 분류 이름"
-                      className="flex-1 rounded-xl border border-cream bg-white px-3 py-2 text-sm outline-none focus:border-work-DEFAULT"
+                      className="flex-1 rounded-xl border border-cream bg-white px-3 py-2 text-sm outline-none focus:border-work"
                     />
                     <button
                       type="button"
                       onClick={addNewType}
-                      className="rounded-xl bg-work-DEFAULT px-3 py-2 text-sm font-bold text-white"
+                      className="rounded-xl bg-work px-3 py-2 text-sm font-bold text-white"
                     >
                       추가
                     </button>
@@ -252,7 +252,7 @@ export default function EventModal({
               onChange={(e) => setMemo(e.target.value)}
               rows={2}
               placeholder="추가로 기록할 내용"
-              className="w-full resize-none rounded-xl border border-cream bg-cream/60 px-3 py-2.5 text-base outline-none focus:border-work-DEFAULT"
+              className="w-full resize-none rounded-xl border border-cream bg-cream/60 px-3 py-2.5 text-base outline-none focus:border-work"
             />
           </div>
         </div>
@@ -268,7 +268,7 @@ export default function EventModal({
           )}
           <button
             onClick={handleSubmit}
-            className="flex-1 rounded-xl bg-work-DEFAULT py-3 text-base font-bold text-white shadow-soft"
+            className="flex-1 rounded-xl bg-work py-3 text-base font-bold text-white shadow-soft"
           >
             {editing ? '수정 완료' : '일정 등록'}
           </button>

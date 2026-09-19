@@ -29,18 +29,18 @@ export default function TodoModal({ defaultDate, onSave, onClose }: TodoModalPro
           value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="할 일을 입력하세요"
-          className="mb-3 w-full rounded-xl border border-cream bg-cream/60 px-3 py-2.5 text-base outline-none focus:border-personal-DEFAULT"
+          className="mb-3 w-full rounded-xl border border-cream bg-cream/60 px-3 py-2.5 text-base outline-none focus:border-personal"
         />
         <label className="mb-1 block text-xs font-bold text-tico-brown">연결할 날짜 (선택)</label>
         <input
           type="date"
           value={linkDate ?? ''}
           onChange={(e) => setLinkDate(e.target.value || null)}
-          className="mb-4 w-full rounded-xl border border-cream bg-cream/60 px-3 py-2.5 text-base outline-none focus:border-personal-DEFAULT"
+          className="mb-4 w-full rounded-xl border border-cream bg-cream/60 px-3 py-2.5 text-base outline-none focus:border-personal"
         />
         <button
           onClick={handleSubmit}
-          className="w-full rounded-xl bg-personal-DEFAULT py-3 text-base font-bold text-white shadow-soft"
+          className="w-full rounded-xl bg-personal py-3 text-base font-bold text-white shadow-soft"
         >
           추가하기
         </button>

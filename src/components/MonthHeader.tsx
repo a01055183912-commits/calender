@@ -29,9 +29,9 @@ export default function MonthHeader({ current, onPrev, onNext, onToday }: MonthH
           ›
         </button>
       </div>
-      <div className="grid grid-cols-7 px-1 text-center text-xs font-semibold text-tico-brown/70">
+      <div className="grid grid-cols-7 px-1 text-center text-sm font-bold text-tico-dark/70">
         {WEEKDAY_LABELS.map((d, i) => (
-          <div key={d} className={i === 0 ? 'text-anniv-dark' : i === 6 ? 'text-work-dark' : ''}>
+          <div key={d} className={i === 0 || i === 6 ? 'text-holiday' : ''}>
             {d}
           </div>
         ))}

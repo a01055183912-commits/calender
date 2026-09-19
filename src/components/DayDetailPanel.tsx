@@ -1,7 +1,8 @@
 import type { ScheduleEvent, TodoItem } from '../types'
-import { formatDayTitle, daysUntil } from '../utils/date'
+import { formatDayTitle, daysUntil, toKey } from '../utils/date'
 import { formatWon } from '../utils/income'
 import { lectureTypeColor } from '../utils/lectureColor'
+import { getHoliday } from '../utils/holidays'
 import CategoryTag from './CategoryTag'
 
 interface DayDetailPanelProps {
@@ -26,14 +27,18 @@ export default function DayDetailPanel({
   onAddTodo,
 }: DayDetailPanelProps) {
   const sorted = [...events].sort((a, b) => (a.time || '99:99').localeCompare(b.time || '99:99'))
+  const holiday = getHoliday(toKey(date))
 
   return (
     <div className="mt-3 rounded-2xl bg-white p-4 shadow-soft">
       <div className="mb-3 flex items-center justify-between">
-        <h3 className="text-base font-extrabold text-tico-dark">{formatDayTitle(date)}</h3>
+        <h3 className="text-base font-extrabold text-tico-dark">
+          {formatDayTitle(date)}
+          {holiday && <span className="ml-2 text-sm font-bold text-holiday">{holiday}</span>}
+        </h3>
         <button
           onClick={onAddEvent}
-          className="rounded-full bg-work-DEFAULT px-3 py-1.5 text-xs font-bold text-white shadow-soft"
+          className="rounded-full bg-work px-3 py-1.5 text-xs font-bold text-white shadow-soft"
         >
           + 일정 추가
         </button>
@@ -112,7 +117,7 @@ export default function DayDetailPanel({
                 type="checkbox"
                 checked={t.done}
                 onChange={() => onToggleTodo(t.id)}
-                className="h-4 w-4 accent-personal-DEFAULT"
+                className="h-4 w-4 accent-personal"
               />
               <span className={`flex-1 text-sm ${t.done ? 'text-tico-brown/40 line-through' : 'text-tico-dark'}`}>
                 {t.text}

@@ -82,7 +82,7 @@ export default function App() {
           <button
             onClick={() => setTab('calendar')}
             className={`flex-1 rounded-full py-2 text-sm font-bold transition ${
-              tab === 'calendar' ? 'bg-work-DEFAULT text-white' : 'text-tico-brown'
+              tab === 'calendar' ? 'bg-work text-white' : 'text-tico-brown'
             }`}
           >
             📅 캘린더
@@ -90,7 +90,7 @@ export default function App() {
           <button
             onClick={() => setTab('todo')}
             className={`flex-1 rounded-full py-2 text-sm font-bold transition ${
-              tab === 'todo' ? 'bg-personal-DEFAULT text-white' : 'text-tico-brown'
+              tab === 'todo' ? 'bg-personal text-white' : 'text-tico-brown'
             }`}
           >
             ✅ 할 일
@@ -150,7 +150,7 @@ export default function App() {
           <button
             onClick={openNewEvent}
             aria-label="일정 추가"
-            className="pointer-events-auto flex h-14 w-14 items-center justify-center rounded-full bg-work-DEFAULT text-3xl font-bold text-white shadow-bubble"
+            className="pointer-events-auto flex h-14 w-14 items-center justify-center rounded-full bg-work text-3xl font-bold text-white shadow-bubble"
           >
             +
           </button>
