@@ -1,6 +1,6 @@
 import type { ScheduleEvent } from '../types'
 import { CATEGORY_DOT } from './CategoryTag'
-import DogFace from './DogFace'
+import PawPrint from './PawPrint'
 
 interface DayCellProps {
   date: Date
@@ -35,7 +35,7 @@ export default function DayCell({ date, inMonth, isToday, isSelected, events, on
       </span>
 
       {events.length === 0 && inMonth && (
-        <DogFace variant={dayNum % 2 === 0 ? 'timo' : 'coco'} size={16} className="mt-1.5 opacity-15" />
+        <PawPrint size={11} className="mt-2 text-tico-brown/25" />
       )}
 
       {events.length > 0 && (

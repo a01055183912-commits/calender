@@ -1,6 +1,7 @@
 import type { ScheduleEvent, TodoItem } from '../types'
 import { formatDayTitle, daysUntil } from '../utils/date'
 import { formatWon } from '../utils/income'
+import { lectureTypeColor } from '../utils/lectureColor'
 import CategoryTag from './CategoryTag'
 
 interface DayDetailPanelProps {
@@ -78,7 +79,15 @@ export default function DayDetailPanel({
                       </a>
                     )}
                     {e.lecture.fee !== '' && <p>💰 {formatWon(Number(e.lecture.fee))}</p>}
-                    <p className="text-xs text-tico-brown/70">분류: {e.lecture.lectureType}</p>
+                    <span
+                      className="inline-block w-fit rounded-full px-2 py-0.5 text-xs font-bold"
+                      style={{
+                        backgroundColor: lectureTypeColor(e.lecture.lectureType).bg,
+                        color: lectureTypeColor(e.lecture.lectureType).text,
+                      }}
+                    >
+                      {e.lecture.lectureType}
+                    </span>
                   </div>
                 )}
                 {e.memo && <p className="mt-1 text-xs text-tico-brown/80">{e.memo}</p>}

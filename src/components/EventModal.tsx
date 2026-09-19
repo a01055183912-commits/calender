@@ -4,6 +4,7 @@ import { CATEGORY_LABEL } from '../types'
 import { toKey } from '../utils/date'
 import VoiceButton from './VoiceButton'
 import { parseVoiceText } from '../utils/speech'
+import { lectureTypeColor } from '../utils/lectureColor'
 
 interface EventModalProps {
   date: Date
@@ -196,18 +197,25 @@ export default function EventModal({
               <div>
                 <label className="mb-1 block text-xs font-bold text-tico-brown">강의분류</label>
                 <div className="flex flex-wrap gap-1.5">
-                  {lectureTypes.map((t) => (
-                    <button
-                      key={t}
-                      type="button"
-                      onClick={() => setLecture((p) => ({ ...p, lectureType: t }))}
-                      className={`rounded-full px-3 py-1.5 text-xs font-bold ${
-                        lecture.lectureType === t ? 'bg-work-DEFAULT text-white' : 'bg-white text-tico-brown'
-                      }`}
-                    >
-                      {t}
-                    </button>
-                  ))}
+                  {lectureTypes.map((t) => {
+                    const c = lectureTypeColor(t)
+                    const selected = lecture.lectureType === t
+                    return (
+                      <button
+                        key={t}
+                        type="button"
+                        onClick={() => setLecture((p) => ({ ...p, lectureType: t }))}
+                        style={{
+                          backgroundColor: c.bg,
+                          color: c.text,
+                          boxShadow: selected ? `0 0 0 2px ${c.text}` : 'none',
+                        }}
+                        className="rounded-full px-3 py-1.5 text-xs font-bold transition"
+                      >
+                        {t}
+                      </button>
+                    )
+                  })}
                   <button
                     type="button"
                     onClick={() => setShowNewType((v) => !v)}
