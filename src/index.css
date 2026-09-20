@@ -28,3 +28,64 @@ body {
 .safe-bottom {
   padding-bottom: env(safe-area-inset-bottom);
 }
+
+@keyframes splash-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-splash-pop {
+  animation: splash-pop 0.5s ease-out both;
+}
+
+@keyframes timo-dash {
+  0% {
+    transform: translateX(-46px) translateY(0) scaleX(1);
+  }
+  22% {
+    transform: translateX(-4px) translateY(-8px) scaleX(1);
+  }
+  25% {
+    transform: translateX(4px) translateY(0) scaleX(-1);
+  }
+  47% {
+    transform: translateX(44px) translateY(-8px) scaleX(-1);
+  }
+  50% {
+    transform: translateX(50px) translateY(0) scaleX(-1);
+  }
+  72% {
+    transform: translateX(4px) translateY(-8px) scaleX(1);
+  }
+  75% {
+    transform: translateX(-4px) translateY(0) scaleX(1);
+  }
+  100% {
+    transform: translateX(-46px) translateY(0) scaleX(1);
+  }
+}
+.animate-timo-dash {
+  animation: timo-dash 1.8s ease-in-out infinite;
+}
+
+@keyframes timo-shadow {
+  0%,
+  50%,
+  100% {
+    transform: scaleX(1);
+    opacity: 0.35;
+  }
+  25%,
+  75% {
+    transform: scaleX(0.7);
+    opacity: 0.18;
+  }
+}
+.animate-timo-shadow {
+  animation: timo-shadow 1.8s ease-in-out infinite;
+}

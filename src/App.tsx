@@ -1,9 +1,10 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import CalendarView from './components/CalendarView'
 import DayDetailPanel from './components/DayDetailPanel'
 import EventModal from './components/EventModal'
 import IncomeSummary from './components/IncomeSummary'
 import ReminderBanner from './components/ReminderBanner'
+import SplashScreen from './components/SplashScreen'
 import TodoModal from './components/TodoModal'
 import TodoPanel from './components/TodoPanel'
 import DogFace from './components/DogFace'
@@ -16,6 +17,17 @@ type Tab = 'calendar' | 'todo'
 export default function App() {
   const { data, addEvent, updateEvent, deleteEvent, addTodo, toggleTodo, deleteTodo, addLectureType } =
     useAppData()
+
+  const [splashPhase, setSplashPhase] = useState<'show' | 'fade' | 'done'>('show')
+
+  useEffect(() => {
+    const fadeTimer = setTimeout(() => setSplashPhase('fade'), 2000)
+    const doneTimer = setTimeout(() => setSplashPhase('done'), 2500)
+    return () => {
+      clearTimeout(fadeTimer)
+      clearTimeout(doneTimer)
+    }
+  }, [])
 
   const [tab, setTab] = useState<Tab>('calendar')
   const [current, setCurrent] = useState(new Date())
@@ -71,6 +83,7 @@ export default function App() {
 
   return (
     <div className="mx-auto min-h-screen max-w-md bg-cream pb-24">
+      {splashPhase !== 'done' && <SplashScreen fading={splashPhase === 'fade'} />}
       <header className="sticky top-0 z-30 bg-cream/95 px-4 pb-2 pt-4 backdrop-blur">
         <div className="mb-3 flex items-center gap-2">
           <DogFace variant="timo" size={32} />
